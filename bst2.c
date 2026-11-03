@@ -6,4 +6,17 @@
 treeNode* searchBST(treeNode* root, element x) {
   treeNode* p;
   int count = 0;
-  p = root
+  p = root;
+  while (p != NULL) {
+    count++;
+    if (x < p->key) p = p->left;
+    else if (x == p->key) {
+      printf("%3d번째에 탐색 성공", count);
+      return p;
+    }
+    else p = p->right;
+  }
+  count++;
+  printf("%3d번째에 탐색 실패! 찾는 키가 없습니다!", count);
+  return p;
+}
