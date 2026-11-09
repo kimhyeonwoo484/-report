@@ -67,11 +67,11 @@ treeNode* insertAVLNode(treeNode** root, element x) {
     }
     else if (x < (*root)->key) {
         (*root)->left = insertAVLNode(&((*root)->left), x);
-        *root = rebalance(*root);
+        *root = rebalance(root);
     }
     else if (x > (*root)->key) {
         (*root)->right = insertAVLNode(&((*root)->right), x);
-        *root = rebalance(*root);
+        *root = rebalance(root);
     }
     else {
         printf("\n 이미 같은 키가 있습니다! \n");
